@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    {% load static %}
+</head>
+<body>
+    <div class="container">
+        <form action="" method="POST">
+            {% csrf_token %}
+            <p>Journal Title</p>
+            <input type="text" name="journal_name">
+            <p>Rate Today</p>
+            <input type="text" name="rating">
+            <p>One Highlight/Positive Thing</p>
+            <input type="text" name="positive">
+            <p>Write about your day here:</p>
+            <textarea name="entry" id="entry" cols="30" rows="10"></textarea>
+            <input type="submit" value="Finished">
+        </form>
+    </div>
+</body>
+</html>

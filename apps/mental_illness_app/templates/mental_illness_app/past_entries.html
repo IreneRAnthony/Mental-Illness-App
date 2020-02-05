@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    {% load static %}
+</head>
+
+<body>
+    <div class="container">
+        <h1>Journal Entries</h1>
+        <a href="/homepage">
+            <p>Back to Home</p>
+        </a>
+        <a href="/logout">
+            <p>Logout</p>
+        </a>
+        <div class="past_entries">
+            <h5>(Sorted by Date)</h5>
+            <table>
+                <tr>
+                    <th>Number</th>
+                    <th>Entry Title</th>
+                    <th>Date</th>
+                    <th>Actions</th>
+                </tr>
+                <tr>
+                {% for User in Journals %}
+                    <td>{{journal.id}}</td>
+                    <td>{{Journal.title}}</td>
+                    <td>{{Journal.created_by}}</td>
+                    <td><a href="/journals/{{journal.id}}/edit">Edit</a> | <a
+                            href="journals/{{journal.id}}/delete">Delete</a></td>
+                    <!--Ask before deleting.-->
+                    {% endfor %}
+                </tr>
+                <!--for loop for past entries-->
+            </table>
+            <!--Click to load more if journals go past a certain number.-->
+            <a href="journals/new"><button>New Entry</button></a>
+        </div>
+    </div>
+</body>
+
+</html>

@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    {% load static %}
+    <link rel="stylesheet" href="{% static 'mental_illness_app/css/homepage.css' %}">
+</head>
+
+<body>
+    <div class="container">
+        <h1>{{current_user.name}}'s Homepage</h1>
+        <a href="/logout">Logout</a>
+        <a href="/homepage/edit">Account Options</a>
+        <h3>Panic Attack? Need help breathing?</h3>
+        <a href="/homepage/panic">To help you calm down.</a>
+        <div class="coins">
+            <p>{{user_coins.coin_amount}} total!</p>
+            <p>{{coin.coin_amount}}/{{coin.goal}}</p>
+        </div>
+        <div class="goals">
+            <div class="main_goal">
+                <h5>{{User.main_goal}}</h5>
+            </div>
+            <div class="sub_goals">
+                <!--a for loop to show all current goals.-->
+                <h3>Goals</h3>
+                <ul>
+                    {% for title in Goal %}
+                    <li>{{User.Goal.title}} Worth: {{Goal.coin_worth}}</li>
+                    {% endfor %}
+                </ul>
+            </div>
+            <a href="/goals"><p>View and Edit Goals</p></a>
+        </div>
+        <div class="music">
+            <h3>Music</h3>
+            <ul>
+                <a href="">
+                    <li>For Calming</li>
+                </a>
+                <a href="">
+                    <li>For Concentration</li>
+                </a>
+                <a href="https://noises.online/">
+                    <li>Ambient Noise</li>
+                </a>
+            </ul>
+        </div>
+        <div class="activites">
+            <h3>Activities!</h3>
+            <ul>
+                <a href="/drawing">
+                    <li>Want to draw?</li>
+                </a>
+                <a href="">
+                    <li>Take your mind off with a simple game?</li>
+                </a>
+            </ul>
+        </div>
+        <div class="reminders">
+            <h3>Reminders!</h3>
+            <form action="" method="POST">
+                {% csrf_token %}
+                <p>Have you taken your meds today?</p>
+                <input type="checkbox" name="meds" value="meds"><br>
+                <p>Eaten something remotely healthy?</p>
+                <input type="checkbox" name="food" value="food"><br>
+                <p>Hydrated yourself today?</p>
+                <input type="checkbox" name="water" value="water"><br>
+                <p>Brushed your teeth?</p>
+                <input type="checkbox" name="teeth" value="teeth"><br>
+                <p>Took a shower or bath? Or even just rinsed up at the sink?</p>
+                <input type="checkbox" name="hygiene" value="hygiene"><br>
+                <p>Slept enough? (At least 6 to 8 hours, but not over 10.)</p>
+                <input type="checkbox" name="sleep" value="sleep">
+            </form>
+        </div>
+        <div class="resources">
+            <h3>Mental Health Resources</h3>
+            <p>(Clicking these will redirect you from this website)</p>
+            <ul>
+                <a href="https://greatist.com/grow/easy-health-tips-busy-lifestyles#4">
+                    <li>More on Healthy Habits</li>
+                </a>
+                <a href="https://psychcentral.com/blog/what-self-care-is-and-what-it-isnt-2/">
+                    <li>Practicing Self Care.</li>
+                </a>
+                <a href="https://everydayfeminism.com/2017/02/self-diagnosing-mental-illness/">
+                    <li>Pros and Cons of self diagnosing.</li>
+                </a>
+                <a href="https://www.nami.org/Find-Support/Living-with-a-Mental-Health-Condition/Disclosing-to-Others">
+                    <li>How to discuss your illness.</li>
+                </a>
+                <a href="https://www.talkspace.com/blog/how-to-ask-for-help-mental-health-care/">
+                    <li>How to ask for help.</li>
+                </a>
+            </ul>
+        </div>
+
+
+    </div>
+</body>
+
+</html>

@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    {% load static %}
+    <link rel="stylesheet" href="{% static 'app_name/css/style.css' %}">
+    <script src="{% static 'mental_illness_app/js/canvas.js' %}"></script>
+</head>
+
+<body>
+    <div class="container">
+            <a href="/logout">Logout</a>
+            <a href="/homepage">Back to Homepage</a>
+            
+        <div class="drawing" onload="init()">
+            <canvas id="can" width="400" height="400"
+                style="position:absolute;top:10%;left:10%;border:2px solid;"></canvas>
+            <div style="position:absolute;top:12%;left:43%;">Choose Color</div>
+            <div style="position:absolute;top:15%;left:45%;width:10px;height:10px;background:green;" id="green"
+                onclick="color(this)"></div>
+            <div style="position:absolute;top:15%;left:46%;width:10px;height:10px;background:blue;" id="blue"
+                onclick="color(this)"></div>
+            <div style="position:absolute;top:15%;left:47%;width:10px;height:10px;background:red;" id="red"
+                onclick="color(this)"></div>
+            <div style="position:absolute;top:17%;left:45%;width:10px;height:10px;background:yellow;" id="yellow"
+                onclick="color(this)"></div>
+            <div style="position:absolute;top:17%;left:46%;width:10px;height:10px;background:orange;" id="orange"
+                onclick="color(this)"></div>
+            <div style="position:absolute;top:17%;left:47%;width:10px;height:10px;background:black;" id="black"
+                onclick="color(this)"></div>
+            <div style="position:absolute;top:20%;left:43%;">Eraser</div>
+            <div style="position:absolute;top:22%;left:45%;width:15px;height:15px;background:white;border:2px solid;"
+                id="white" onclick="color(this)"></div>
+            <img id="canvasimg" style="position:absolute;top:10%;left:52%;" style="display:none;">
+            <input type="button" value="save" id="btn" size="30" onclick="save()"
+                style="position:absolute;top:55%;left:10%;">
+            <input type="button" value="clear" id="clr" size="23" onclick="erase()"
+                style="position:absolute;top:55%;left:15%;">
+
+            <div class="about_drawing">
+                <h3>The benefits of being creative:</h3>
+                <ul>
+                    <li>Drawing can decrease anxiety and help release feelings unable to be expressed in words.</li>
+                    <li>Dancing, including practices such as Tai Chi, can be energizing and uplifting as well as
+                        meditative.</li>
+                    <li>Writing can help improve mood stability as well as psychological well being.</li>
+                </ul>
+                <p>Psst! Want to write something? Why not a</p><a href="/journal">journal entry?</a>
+                <a href="https://www.ncbi.nlm.nih.gov/pmc/articles/PMC2804629/">Read more about Mental Illness and the
+                    Benefits of Art</a>
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>

@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <div class="container">
+        <h1>Your Goals!</h1>
+        <a href="/homepage">Homepage</a>
+        <div class="set_goals">
+            <h2>Current Goals:</h2>
+        <!--Set for loop for goals-->
+            <form action="" method="POST">
+                <p>Goal Name:</p>
+                <input type="text" name="goal_name">
+                <p>Worth how many Coins?</p>
+                <p>(Max of 20)</p>
+                <input type="number" name="coin_worth" min="1" max="20">
+            </form>
+        </div>
+        <div class="main_goal">
+            <!--More than one goal?-->
+            <h2>Your Objectives!</h2>
+            <!--for loop for all objectives-->
+            <p>{{objectives}}</p>
+        </div>
+        <div class="previous_goals">
+            <!--A scrolling div to see past goals that have been done.-->
+            <!--For loop for previous goals.-->
+        </div>
+    </div>
+</body>
+</html>

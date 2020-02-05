@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    {% load static %}
+</head>
+<body>
+    <div class="container">
+        <h1>Welcome {{request.session.name}}</h1>
+        <h3>A few quick questions for you...</h3>
+        <div class="mental_health">
+            <p>What do you suffer from?</p>
+            <p>(You don't have to answer.)</p>
+            <input type="text" name="illness">
+            <p>How does it affect you?</p>
+            <input type="checkbox" name="affect">
+            <p>Are you ok right now?</p>
+            <input type="radio" name="ok">
+            <input type="submit" value="Done!">
+        </div>
+
+    </div>
+</body>
+</html>

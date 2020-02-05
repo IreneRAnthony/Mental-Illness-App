@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    {% load static %}
+</head>
+<body>
+    <div class="container">
+        <a href="/logout"><p>Logout</p></a>
+        <a href="/homepage"><p>Back to Home</p></a>
+        <div class="settings">
+            <h2>Edit Account Information</h2>
+            <form action="/homepage/edit/update" method="POST">
+                {% csrf_token %}
+                <p>Name:</p>
+                <input type="text" name="name" value='{{User.name}}'>
+                <p>Email:</p>
+                <input type="email" name="email" value="{{User.email}}">
+                <p>Password:</p>
+                <input type="password" name="password">
+                <p>Confirm Password:</p>
+                <input type="password" name="confirm_password">
+                <input type="reset" value="Reset Form">
+                <input type="submit" value="Submit">
+            </form>
+        </div>
+        <div class="delete">
+            <h4>Want to delete your account?</h4>
+            <p>(You will be asked to confirm your decision)</p>
+                <a href="homepage/delete/confirmation"><button>Delete Account</button></a>
+        </div>
+    </div>
+</body>
+</html>

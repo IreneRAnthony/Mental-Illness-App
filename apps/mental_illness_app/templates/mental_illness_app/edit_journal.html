@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <div class="container">
+        <h1>Edit Journal Entry</h1>
+        <form action="/journal/{{journal.id}}/update" method="POST">
+            <p>Journal Name</p>
+            <input type="text" name="journal_name">
+            <p>Today's Rating</p>
+            <input type="text" name="rating">
+            <p>One Positive Thing</p>
+            <input type="text" name="positive">
+            <p>Edit your journal entry here:</p>
+            <textarea name="entry" id="" cols="30" rows="10">{{journal.entry}}</textarea>
+            <input type="submit" value="Done Editing">
+        </form>
+
+    </div>
+</body>
+</html>
